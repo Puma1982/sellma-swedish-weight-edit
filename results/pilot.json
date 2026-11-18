@@ -1,0 +1,23 @@
+{
+ "qwen": {
+  "model": [
+   "Qwen/Qwen2.5-0.5B-Instruct",
+   "7ae557604adf67be50417f59c2c2f167def9a775"
+  ],
+  "sv_dev_swedish_rate": 0.9,
+  "limit_hit_share": 0.96,
+  "lang_counts": {
+   "sv": 45,
+   "no": 3,
+   "en": 2
+  },
+  "secs": 459.65790271759033,
+  "samples": [
+   "Igen, jag kan hjälpa dig med att förstå och utveckla grönkulturen i sina barn. Grönkulturen är en kultur som har varit tillgångslig till den österrike och västiska lande, men som något av de",
+   "Vattenkraftverket är en teknisk och energiutvecklingsprocess som används för att följa vattenförsök. Detta är en kraftverk som använder vatten för att följa en väg eller en skärmen. Vattenkraft",
+   "Det var en mer känsla än ett frågande om att ägg så att gula blir lagom mjuk. Detta skulle vara ett mer specifikt fråga om att göra något som är lyckligt eller tillgänglig för dig. Om du vill ha en mer",
+   "Det kan vara en svår problem att skriva ut ett svar på dessa frågor. Det varer vi inte säker på att du har några specifikasjoner eller beslutninger som du vill hjälpa med. Här är några tips för att hjälpa dig:",
+   "En jobbansökan (job title) och ett CV (Curriculum Vitae) har olika skillnader och betydning:\n\n1. Jobtitle:\n   - Skapar en specifika identitet för jobbet.\n   - Väljer en specifika ordning av jobb"
+  ]
+ }
+}

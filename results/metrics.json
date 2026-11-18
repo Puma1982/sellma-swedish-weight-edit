@@ -1,0 +1,322 @@
+{
+ "greedy_test": {
+  "baseline": {
+   "sv_prompts": {
+    "n": 110,
+    "rate": 0.9272727272727272,
+    "ci95": [
+     0.863,
+     0.9627
+    ],
+    "lang_counts": {
+     "en": 3,
+     "nb": 2,
+     "no": 3,
+     "sv": 102
+    },
+    "mean_words": 34.80909090909091,
+    "limit_hit_share": 0.9545454545454546,
+    "lenient_scandinavian_rate": 0.9727272727272728,
+    "nonword_rate_in_sv_answers": 0.045072115384615384
+   },
+   "en_prompts_english_rate": {
+    "n": 60,
+    "rate": 1.0,
+    "ci95": [
+     0.9398,
+     1.0
+    ],
+    "lang_counts": {
+     "en": 60
+    },
+    "mean_words": 50.71666666666667,
+    "limit_hit_share": 0.9666666666666667
+   }
+  },
+  "edited": {
+   "sv_prompts": {
+    "n": 110,
+    "rate": 0.9272727272727272,
+    "ci95": [
+     0.863,
+     0.9627
+    ],
+    "lang_counts": {
+     "da": 1,
+     "en": 3,
+     "nb": 2,
+     "no": 2,
+     "sv": 102
+    },
+    "mean_words": 34.10909090909091,
+    "limit_hit_share": 0.9454545454545454,
+    "lenient_scandinavian_rate": 0.9727272727272728,
+    "nonword_rate_in_sv_answers": 0.041960183767228175
+   },
+   "en_prompts_english_rate": {
+    "n": 60,
+    "rate": 1.0,
+    "ci95": [
+     0.9398,
+     1.0
+    ],
+    "lang_counts": {
+     "en": 60
+    },
+    "mean_words": 50.68333333333333,
+    "limit_hit_share": 0.9666666666666667
+   }
+  },
+  "prompting": {
+   "sv_prompts": {
+    "n": 110,
+    "rate": 0.9818181818181818,
+    "ci95": [
+     0.9361,
+     0.995
+    ],
+    "lang_counts": {
+     "en": 1,
+     "no": 1,
+     "sv": 108
+    },
+    "mean_words": 35.91818181818182,
+    "limit_hit_share": 0.9454545454545454,
+    "lenient_scandinavian_rate": 0.990909090909091,
+    "nonword_rate_in_sv_answers": 0.030421434552051353
+   },
+   "en_prompts_english_rate": {
+    "n": 60,
+    "rate": 0.9333333333333333,
+    "ci95": [
+     0.8407,
+     0.9738
+    ],
+    "lang_counts": {
+     "en": 56,
+     "sv": 4
+    },
+    "mean_words": 41.35,
+    "limit_hit_share": 0.7833333333333333
+   }
+  },
+  "steering": {
+   "sv_prompts": {
+    "n": 110,
+    "rate": 0.1,
+    "ci95": [
+     0.0568,
+     0.1702
+    ],
+    "lang_counts": {
+     "az": 1,
+     "de": 14,
+     "en": 66,
+     "et": 10,
+     "ga": 1,
+     "lb": 1,
+     "no": 2,
+     "sv": 11,
+     "tr": 4
+    },
+    "mean_words": 7.6,
+    "limit_hit_share": 1.0,
+    "lenient_scandinavian_rate": 0.11818181818181818,
+    "nonword_rate_in_sv_answers": 0.18461538461538463
+   },
+   "en_prompts_english_rate": {
+    "n": 60,
+    "rate": 0.8833333333333333,
+    "ci95": [
+     0.7782,
+     0.9423
+    ],
+    "lang_counts": {
+     "en": 53,
+     "vi": 1,
+     "zh": 6
+    },
+    "mean_words": 5.65,
+    "limit_hit_share": 1.0
+   }
+  },
+  "edit_plus_prompting": {
+   "sv_prompts": {
+    "n": 110,
+    "rate": 0.990909090909091,
+    "ci95": [
+     0.9503,
+     0.9984
+    ],
+    "lang_counts": {
+     "en": 1,
+     "sv": 109
+    },
+    "mean_words": 35.39090909090909,
+    "limit_hit_share": 0.9727272727272728,
+    "lenient_scandinavian_rate": 0.990909090909091,
+    "nonword_rate_in_sv_answers": 0.0286281179138322
+   },
+   "en_prompts_english_rate": {
+    "n": 60,
+    "rate": 0.9333333333333333,
+    "ci95": [
+     0.8407,
+     0.9738
+    ],
+    "lang_counts": {
+     "en": 56,
+     "sv": 4
+    },
+    "mean_words": 41.11666666666667,
+    "limit_hit_share": 0.7833333333333333
+   }
+  }
+ },
+ "paired_tests": {
+  "edited_vs_baseline": {
+   "only_second": 0,
+   "only_first": 0,
+   "p": 1.0
+  },
+  "edited_vs_prompting": {
+   "only_second": 7,
+   "only_first": 1,
+   "p": 0.0703125
+  },
+  "edited_vs_steering": {
+   "only_second": 0,
+   "only_first": 91,
+   "p": 8.077935669463161e-28
+  },
+  "edited_vs_random0": {
+   "only_second": 1,
+   "only_first": 0,
+   "p": 1.0
+  },
+  "edited_vs_random1": {
+   "only_second": 1,
+   "only_first": 1,
+   "p": 1.0
+  },
+  "edited_vs_random2": {
+   "only_second": 0,
+   "only_first": 0,
+   "p": 1.0
+  },
+  "edited_vs_random3": {
+   "only_second": 1,
+   "only_first": 1,
+   "p": 1.0
+  },
+  "edited_vs_random4": {
+   "only_second": 1,
+   "only_first": 1,
+   "p": 1.0
+  },
+  "steering_vs_baseline": {
+   "only_second": 91,
+   "only_first": 0,
+   "p": 8.077935669463161e-28
+  },
+  "prompting_vs_baseline": {
+   "only_second": 1,
+   "only_first": 7,
+   "p": 0.0703125
+  }
+ },
+ "random": {
+  "per_seed_rate": [
+   0.9363636363636364,
+   0.9272727272727272,
+   0.9272727272727272,
+   0.9272727272727272,
+   0.9272727272727272
+  ],
+  "mean_rate": 0.9290909090909091,
+  "sd_rate": 0.0036363636363636598,
+  "mean_nonword": 0.04416943576080183,
+  "mean_words": 34.92,
+  "pooled_ci95": [
+   0.9045,
+   0.9477
+  ],
+  "seed0_en_prompts_english_rate": {
+   "n": 60,
+   "rate": 1.0,
+   "ci95": [
+    0.9398,
+    1.0
+   ],
+   "lang_counts": {
+    "en": 60
+   },
+   "mean_words": 50.38333333333333,
+   "limit_hit_share": 0.9833333333333333
+  }
+ },
+ "sampled": {
+  "baseline": {
+   "per_seed_rate": [
+    0.8545454545454545,
+    0.8909090909090909,
+    0.8181818181818182
+   ],
+   "mean": 0.8545454545454545
+  },
+  "edited": {
+   "per_seed_rate": [
+    0.8545454545454545,
+    0.9090909090909091,
+    0.8
+   ],
+   "mean": 0.8545454545454545
+  },
+  "prompting": {
+   "per_seed_rate": [
+    0.9636363636363636,
+    0.9272727272727272,
+    0.9272727272727272
+   ],
+   "mean": 0.9393939393939393
+  }
+ },
+ "failure_removal": {
+  "baseline_failures": 8,
+  "fixed": {
+   "edited": 0,
+   "prompting": 7,
+   "steering": 0,
+   "edit_plus_prompting": 7
+  },
+  "newly_broken": {
+   "edited": 0,
+   "prompting": 1,
+   "steering": 91,
+   "edit_plus_prompting": 0
+  },
+  "fixed_by_edit_and_prompting": 0
+ },
+ "perplexity": {
+  "baseline": {
+   "sv": 71.53479226160374,
+   "en": 20.115503800244245
+  },
+  "edited": {
+   "sv": 71.76056671830112,
+   "en": 20.164076666288143
+  },
+  "random0": {
+   "sv": 71.8400861129363,
+   "en": 20.116481298853476
+  },
+  "random1": {
+   "sv": 71.73652146648753,
+   "en": 20.125429599525994
+  },
+  "steering": {
+   "sv": 1880.7351244077977,
+   "en": 254.9328277122941
+  }
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "model": [
+  "Qwen/Qwen2.5-0.5B-Instruct",
+  "7ae557604adf67be50417f59c2c2f167def9a775"
+ ],
+ "seed": 0,
+ "max_new_tokens": 64,
+ "layers": [
+  6,
+  9,
+  12,
+  15,
+  18
+ ],
+ "alphas": [
+  0.5,
+  1.0,
+  2.0
+ ],
+ "selected": {
+  "edit": {
+   "L": 6,
+   "alpha": 2.0,
+   "dev": {
+    "sv": 0.9166666666666666,
+    "en": 1.0,
+    "score": 0.9166666666666666
+   }
+  },
+  "steer": {
+   "L": 15,
+   "alpha": 0.5,
+   "dev": {
+    "sv": 0.2916666666666667,
+    "en": 1.0,
+    "score": 0.2916666666666667
+   }
+  }
+ },
+ "edit_stats": {
+  "layer": 6,
+  "matrix_entries_changed": 4358144,
+  "share_of_all_params": 0.008821568694002095,
+  "free_parameters_in_edit": 896,
+  "total_params": 494032768
+ },
+ "system_prompt": "Svara alltid p\u00e5 svenska.",
+ "sampled": {
+  "temperature": 0.7,
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "n_prompts": 55
+ },
+ "random_seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "ppl_max_tokens": 96,
+ "args": {
+  "seed": 0,
+  "model": "qwen",
+  "budget_seconds": 1000000000.0,
+  "dev_sv": 24,
+  "dev_en": 10,
+  "dev_tokens": 32,
+  "sampled_n": 55
+ },
+ "versions": {
+  "torch": "2.2.2",
+  "transformers": "4.44.2"
+ }
+}

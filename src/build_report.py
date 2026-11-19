@@ -12,8 +12,17 @@ for title, f in (("Main results table (greedy decoding, test set)", "results/res
 for cap, f in (("Swedish-answer rate per condition", "swedish_rate_by_condition.png"), ("Perplexity per condition", "perplexity.png")):
     if (ROOT / "figures" / f).exists(): app.append(f"\n![{cap}](../figures/{f})\n")
 sel = ROOT / "results" / "dev_selection.json"
-html_body = markdown.markdown(note + "".join(app), extensions=["tables", "fenced_code"])
-css = "body{font-family:Georgia,serif;max-width:780px;margin:24px auto;font-size:12px;line-height:1.45}table{border-collapse:collapse;font-size:10.5px}td,th{border:1px solid #999;padding:3px 6px}img{max-width:100%}h1{font-size:20px}h2{font-size:15px}code{font-size:11px}"
+import re
+def fix_lists(t):  # python-markdown needs a blank line before a list; the note omits it
+    out, prev = [], ""
+    for ln in t.split("\n"):
+        is_item = re.match(r"\s*([-*]|\d+\.)\s", ln) is not None
+        prev_item = re.match(r"\s*([-*]|\d+\.)\s", prev) is not None
+        if is_item and prev.strip() and not prev_item: out.append("")
+        out.append(ln); prev = ln
+    return "\n".join(out)
+html_body = markdown.markdown(fix_lists(note + "".join(app)), extensions=["tables", "fenced_code"])
+css = "body{font-family:Georgia,serif;max-width:780px;margin:24px auto;font-size:12px;line-height:1.45}table{border-collapse:collapse;font-size:10.5px}td,th{border:1px solid #999;padding:3px 6px}img{max-width:100%}h1{font-size:20px}h1~h1{page-break-before:always}h2,h3{break-after:avoid}img,table{break-inside:avoid}h2{font-size:15px}code{font-size:11px}"
 (R / "report.html").write_text(f"<!doctype html><meta charset=utf-8><style>{css}</style>{html_body}", encoding="utf-8")
 chrome = next((c for c in ["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", shutil.which("chromium"), shutil.which("google-chrome")] if c and pathlib.Path(c).exists()), None)
 if chrome:

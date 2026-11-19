@@ -8,19 +8,29 @@ answers, held-out perplexity, Swedish spelling)?
 **Start with `report/research_note.md`** (1–2 pages), then `report/report.pdf` (longer). Everything is own work with AI help (see `AI_USAGE.md`).
 
 ## Reproduce
+From the repo root (Python 3.10):
 ```bash
 python3.10 -m venv .venv && . .venv/bin/activate
-pip install -r requirements.txt && python src/build_data.py   # data is already committed; this step is optional
-cd src && python run_all.py --seed 0                          # pilot results are in results/pilot.json (python pilot.py)
-python build_report.py                                         # report/report.pdf (needs Chrome)
+pip install -r requirements.txt && python run_all.py --seed 0
 ```
-Equivalent one-liner from the repo root: `pip install -r requirements.txt && python src/run_all.py --seed 0`
-(run from `src/` or with `PYTHONPATH=src`; the script is resumable: it caches every generation batch in `results/gen/`
-and can be stopped/restarted with `--budget-seconds`).
+This downloads `Qwen/Qwen2.5-0.5B-Instruct` at the pinned revision, then runs direction extraction, dev-set selection,
+test-set generation for all conditions (baseline, weight edit, random edits, prompting, steering, edit+prompting),
+the sampled-decoding check, held-out perplexity and the metrics, and writes everything to `results/`.
+The script is resumable: every generation batch is cached in `results/gen/` (the committed cache means a re-run
+reuses it; delete `results/gen/` to recompute from scratch). `--budget-seconds N` stops after N seconds; re-run to continue.
 
-- **Hardware used:** Intel Mac, 4 cores, CPU only, fp32, heavily shared with other apps. Runtime of the full run: see the research note (several hours).
+Optional: `python src/build_data.py` rebuilds the data (already committed); `python src/pilot.py` the pilot;
+`python src/build_report.py` rebuilds `report/report.pdf` (needs Chrome/Chromium).
+
+- **Runtime:** about 3 hours from scratch (10,622 s in the recorded run, `results/run_log_clean.txt`).
+- **Hardware used:** Intel Mac, 4 cores, CPU only, fp32, shared with other apps. No GPU needed.
 - **Model:** `Qwen/Qwen2.5-0.5B-Instruct` @ `7ae557604adf67be50417f59c2c2f167def9a775` (Apache-2.0). Seed 0; greedy decoding; 64 new tokens.
 - Dev-grid screening used a reduced dev subset and 32 tokens, and the sampled-decoding check used 55 test prompts, to fit the CPU budget (`results/config.json`).
+
+## Where the results are
+`results/metrics.json`, `results/results_table.md`, `results/perplexity_table.md` (tables) · `results/gen/*.jsonl` (every generation) ·
+`results/config.json` (model revision, seed, selected layer/alpha) · `figures/` · `results/readable_samples.md` (examples) ·
+`report/research_note.md` (read first) and `report/report.pdf`.
 
 ## Layout
 `src/` code · `data/` prompts, splits, Wikipedia paragraphs, dictionary (+ `data/README.md` with licences) ·
